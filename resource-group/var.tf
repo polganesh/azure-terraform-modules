@@ -8,9 +8,6 @@ variable "location"{
 	default="northeurope"
 }
 
-
-
-
 variable "environment"{
 	description="indicates name of our environment. possible values dev,cit,sit,uat,pprod,prod,n"
 	default="dev"
@@ -25,7 +22,6 @@ variable "project"{
 	description="Name of Project"
 	default=""
 }
-
 
 variable "version_id"{
 	description="version of this component.Everytime when we are updating this component we need to increment it."
@@ -50,8 +46,5 @@ variable "maintenance_time"{
 variable "resource_group_seq_id"{
 	description="sequence id for resource group"
 	default="001"
-
 }
-
-
 
