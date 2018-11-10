@@ -33,7 +33,7 @@ variable "version_id"{
 }
 
 variable "build_date"{
-	description="date on which this component is built.format ddMMMYYYY e.g. 26Nov218 indicates it is built on 26th Day of november month year 2018"
+	description="date on which this component is built.format ddMMYYYY e.g. 2611218 indicates it is built on 26th Day of November month and year of 2018"
 	default=""
 }
 
