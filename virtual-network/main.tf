@@ -15,7 +15,7 @@ resource "azure_virtual_network" "main" {
 	name	=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
 	location=	"${var.location}"
 	address_space       = ["${var.address_space}"]
-  	resource_group_name = "${data.azurerm_resource_group.main.id}"
+  	resource_group_name = "${data.azurerm_resource_group.main.name}"
   	
 	
 	tags {
