@@ -52,5 +52,17 @@ variable "vnet_cidr"{
 	description="address space (CIDR range) for vnet"
 }
 
+variable "public_subnet_cidr_list"{
+	description="all public facing resources e.g. ALB will reside in this subnet"
+	type="list"
+}
 
+variable "privateApp_subnet_cidr_list"{
+	description="all private app resources will reside in this subnet"
+	type="list"
+}
 
+variable "privateDb_subnet_cidr_list"{
+	description="all Db resources will reside in this subnet"
+	type="list"
+}
