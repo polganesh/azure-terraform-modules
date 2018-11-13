@@ -48,8 +48,8 @@ variable "seq_id"{
 	default="001"
 }
 
-variable "address_space"{
-	description="address space for vnet"
+variable "vnet_cidr"{
+	description="address space (CIDR range) for vnet"
 }
 
 
