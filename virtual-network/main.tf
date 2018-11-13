@@ -33,12 +33,12 @@ resource "azurerm_resource_group" "main" {
 }
 
 resource "azurerm_virtual_network" "main" {
-	name			="vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
-	location		="${var.location}"
-	address_space       	= ["${var.vnet_cidr}"]
-  	resource_group_name	= "${azurerm_resource_group.main.name}"
+	name			=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.vnet_seq_id}"
+	location		=	"${var.location}"
+	address_space       	= 	["${var.vnet_cidr}"]
+  	resource_group_name	= 	"${azurerm_resource_group.main.name}"
 	tags {
-		Name		=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
+		Name		=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.vnet_seq_id}"
     		Environment 	= 	"${var.environment}"
 		LocationId	=	"${var.location_id}"
 		Location	=	"${var.location}"
@@ -54,7 +54,7 @@ resource "azurerm_virtual_network" "main" {
 
 resource "azurerm_subnet" "public" {
 	virtual_network_name	= 	"${azurerm_virtual_network.main.name}"
-  	resource_group_name	= 	"${data.azurerm_resource_group.main.name}"
+  	resource_group_name	= 	"${azurerm_resource_group.main.name}"
 	count			=	"${length(var.public_subnet_cidr_list)}"
 	name			=	"sub-${var.location_id}-${var.environment}-${var.cost_centre}-VNet${var.vnet_seq_id}-pub-${count.index}-${var.seq_id}"
 	address_prefix		=	"${element(var.public_subnet_cidr_list, count.index)}"

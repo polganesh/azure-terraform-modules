@@ -48,6 +48,11 @@ variable "seq_id"{
 	default="001"
 }
 
+variable "vnet_seq_id"{
+	description="sequence id for vnet"
+	default="001"
+}
+
 variable "vnet_cidr" {
   description = "CIDR block for Virtual Network"
 }
@@ -58,12 +63,4 @@ variable "public_subnet_cidr_list"{
 	type="list"
 }
 
-variable "privateApp_subnet_cidr_list"{
-	description="all private app resources will reside in this subnet"
-	type="list"
-}
 
-variable "privateDb_subnet_cidr_list"{
-	description="all Db resources will reside in this subnet"
-	type="list"
-}
