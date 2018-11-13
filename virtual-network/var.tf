@@ -48,9 +48,10 @@ variable "seq_id"{
 	default="001"
 }
 
-variable "vnet_cidr"{
-	description="address space (CIDR range) for vnet"
+variable "vnet_cidr" {
+  description = "CIDR block for Virtual Network"
 }
+
 
 variable "public_subnet_cidr_list"{
 	description="all public facing resources e.g. ALB will reside in this subnet"
