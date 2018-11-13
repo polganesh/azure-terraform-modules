@@ -43,7 +43,7 @@ variable "maintenance_time"{
 	default=""
 }
 
-variable "resource_group_seq_id"{
+variable "seq_id"{
 	description="sequence id for resource group"
 	default="001"
 }

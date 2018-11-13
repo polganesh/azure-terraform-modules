@@ -1,9 +1,9 @@
 resource "azurerm_resource_group" "main" {
-	name	=	"rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.resource_group_seq_id}"
+	name	=	"rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
 	location=	"${var.location}"
 	
 	tags {
-		Name		=	"rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.resource_group_seq_id}"
+		Name		=	"rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
     		Environment 	= 	"${var.environment}"
 		LocationId	=	"${var.location_id}"
 		Location	=	"${var.location}"
@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "main" {
 		BuildDate	=	"${var.build_date}"
 		MaintenanceDay	=	"${var.maintenance_day}"
 		MaintenanceTime	=	"${var.maintenance_time}"
-		ResGroupSeqId	=	"${var.resource_group_seq_id}"
+		SeqId		=	"${var.seq_id}"
 	}
 }
 
