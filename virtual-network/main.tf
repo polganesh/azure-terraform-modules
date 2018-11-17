@@ -5,7 +5,7 @@ Author :- Ganesh Pol
 **/
 
 resource "azurerm_resource_group" "main" {
-	name	=	"rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
+	name	=	"rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.seq_id}"
 	location=	"${var.location}"
 	
 	tags {
@@ -14,7 +14,6 @@ resource "azurerm_resource_group" "main" {
 		LocationId	=	"${var.location_id}"
 		Location	=	"${var.location}"
 		CostCentre	=	"${var.cost_centre}"
-		Project		=	"${var.project}"
 		VersionId	=	"${var.version_id}"
 		BuildDate	=	"${var.build_date}"
 		MaintenanceDay	=	"${var.maintenance_day}"
@@ -24,17 +23,16 @@ resource "azurerm_resource_group" "main" {
 }
 
 resource "azurerm_virtual_network" "main" {
-	name			=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.vnet_seq_id}"
+	name			=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.vnet_seq_id}"
 	location		=	"${var.location}"
 	address_space       	= 	["${var.vnet_cidr}"]
   	resource_group_name	= 	"${azurerm_resource_group.main.name}"
 	tags {
-		Name		=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.vnet_seq_id}"
+		Name		=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.vnet_seq_id}"
     		Environment 	= 	"${var.environment}"
 		LocationId	=	"${var.location_id}"
 		Location	=	"${var.location}"
 		CostCentre	=	"${var.cost_centre}"
-		Project		=	"${var.project}"
 		VersionId	=	"${var.version_id}"
 		BuildDate	=	"${var.build_date}"
 		MaintenanceDay	=	"${var.maintenance_day}"
