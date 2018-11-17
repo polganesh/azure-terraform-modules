@@ -63,4 +63,9 @@ variable "public_subnet_cidr_list"{
 	type="list"
 }
 
+variable public_service_endpoint_list{
+	description=" The list of Service endpoints to associate with the subnet. Possible values include: Microsoft.AzureActiveDirectory, Microsoft.AzureCosmosDB, Microsoft.EventHub, Microsoft.KeyVault, Microsoft.ServiceBus, Microsoft.Sql and Microsoft.Storage."
+	type="list"
+}
+
 

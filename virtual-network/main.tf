@@ -4,15 +4,6 @@ Description	:- General Purpose Virtual Network
 Author :- Ganesh Pol
 **/
 
-/**
-data "azurerm_resource_group" "main" {
-   filter {
-    name   = "tag:Name"
-    values = ["*-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"]
-  }
-}
-**/
-
 resource "azurerm_resource_group" "main" {
 	name	=	"rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
 	location=	"${var.location}"
@@ -58,5 +49,6 @@ resource "azurerm_subnet" "public" {
 	count			=	"${length(var.public_subnet_cidr_list)}"
 	name			=	"sub-${var.location_id}-${var.environment}-${var.cost_centre}-VNet${var.vnet_seq_id}-pub-${count.index}-${var.seq_id}"
 	address_prefix		=	"${element(var.public_subnet_cidr_list, count.index)}"
+	service_endpoints	=	"${var.public_service_endpoint_list}"
 }
 
