@@ -52,3 +52,24 @@ resource "azurerm_subnet" "public" {
 	service_endpoints	=	"${var.public_service_endpoint_list}"
 }
 
+
+resource "azurerm_subnet" "privateApp" {
+	virtual_network_name	= 	"${azurerm_virtual_network.main.name}"
+  	resource_group_name	= 	"${azurerm_resource_group.main.name}"
+	count			=	"${length(var.private_app_subnet_cidr_list)}"
+	name			=	"sub-${var.location_id}-${var.environment}-${var.cost_centre}-VNet${var.vnet_seq_id}-privApp-${count.index+1}-${var.seq_id}"
+	address_prefix		=	"${element(var.private_app_subnet_cidr_list, count.index)}"
+	service_endpoints	=	"${var.private_app_service_endpoint_list}"
+}
+
+
+resource "azurerm_subnet" "privateDb" {
+	virtual_network_name	= 	"${azurerm_virtual_network.main.name}"
+  	resource_group_name	= 	"${azurerm_resource_group.main.name}"
+	count			=	"${length(var.private_db_subnet_cidr_list)}"
+	name			=	"sub-${var.location_id}-${var.environment}-${var.cost_centre}-VNet${var.vnet_seq_id}-privDb-${count.index+1}-${var.seq_id}"
+	address_prefix		=	"${element(var.private_db_subnet_cidr_list, count.index)}"
+	service_endpoints	=	"${var.private_db_service_endpoint_list}"
+}
+
+

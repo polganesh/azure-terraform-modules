@@ -69,4 +69,30 @@ variable public_service_endpoint_list{
 	default=[]
 }
 
+variable "private_app_subnet_cidr_list"{
+	description="all application resources which we dont want to expose will reside in this subnet."
+	type="list"
+}
+
+variable private_app_service_endpoint_list{
+	description=" The list of Service endpoints to associate with the subnet. Possible values include: Microsoft.AzureActiveDirectory, Microsoft.AzureCosmosDB, Microsoft.EventHub, Microsoft.KeyVault, Microsoft.ServiceBus, Microsoft.Sql and Microsoft.Storage."
+	type="list"
+	default=[]
+}
+
+variable "private_db_subnet_cidr_list"{
+	description="all persistence level resources which we dont want to expose will reside in this subnet."
+	type="list"
+}
+
+variable private_db_service_endpoint_list{
+	description=" The list of Service endpoints to associate with the subnet. Possible values include: Microsoft.AzureActiveDirectory, Microsoft.AzureCosmosDB, Microsoft.EventHub, Microsoft.KeyVault, Microsoft.ServiceBus, Microsoft.Sql and Microsoft.Storage."
+	type="list"
+	default=[]
+}
+
+
+
+
+
 
