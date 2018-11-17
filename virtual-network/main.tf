@@ -47,7 +47,7 @@ resource "azurerm_subnet" "public" {
 	virtual_network_name	= 	"${azurerm_virtual_network.main.name}"
   	resource_group_name	= 	"${azurerm_resource_group.main.name}"
 	count			=	"${length(var.public_subnet_cidr_list)}"
-	name			=	"sub-${var.location_id}-${var.environment}-${var.cost_centre}-VNet${var.vnet_seq_id}-pub-${count.index}-${var.seq_id}"
+	name			=	"sub-${var.location_id}-${var.environment}-${var.cost_centre}-VNet${var.vnet_seq_id}-pub-${count.index+1}-${var.seq_id}"
 	address_prefix		=	"${element(var.public_subnet_cidr_list, count.index)}"
 	service_endpoints	=	"${var.public_service_endpoint_list}"
 }
