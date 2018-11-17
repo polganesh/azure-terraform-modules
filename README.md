@@ -9,7 +9,7 @@ Although it is not mandetory to follow exactly same values but these values help
 * Possible values :- can be obtain list of locations by Azure CLI command **az account list-locations --output table**
 * e.g. for north Europe :- northeurope
 
-## region_id ##
+## location_id ##
 * short indicator for location
 * it follows 2char country/continent code followed by location central,north,west,east .....
 * for **northeu**rope it is  euNorth
