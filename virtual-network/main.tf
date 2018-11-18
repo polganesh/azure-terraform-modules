@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "main" {
 resource "azurerm_virtual_network" "main" {
 	name			=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.vnet_seq_id}"
 	location		=	"${var.location}"
-	address_space       	= 	["${var.vnet_cidr}"]
+	address_space       	= 	"${var.vnet_cidr_list}"
   	resource_group_name	= 	"${azurerm_resource_group.main.name}"
 	tags {
 		Name		=	"vnet-${var.location_id}-${var.environment}-${var.cost_centre}-${var.vnet_seq_id}"

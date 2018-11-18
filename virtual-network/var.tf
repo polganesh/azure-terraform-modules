@@ -53,10 +53,10 @@ variable "vnet_seq_id"{
 	default="001"
 }
 
-variable "vnet_cidr" {
-  description = "CIDR block for Virtual Network"
+variable "vnet_cidr_list" {
+  	description = "CIDR block list for Virtual Network"
+	type="list"
 }
-
 
 variable "public_subnet_cidr_list"{
 	description="all public facing resources e.g. ALB will reside in this subnet"
