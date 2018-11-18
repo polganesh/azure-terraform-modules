@@ -100,4 +100,16 @@ sun		|Sunday
 * 4 digit fixed.
 * it is 24 hours format. e.g. 1330 i.e. 1 pm 30 minutes.
 
+# Version History #
+Version History | Notes
+----------------|--------
+0.2.2v		|added facility to attach multiple CIDR blocks to virtual network module
+0.2.1v		|removed dependency of project in **virtual-network** and **resource-group** module. these modules are not specific to project from this version onward.
+**0.2.0v**	|added **virtual-network** module
+0.1.3v		|changes in **resource-group** name and tags for it
+0.1.2v		|changes in **resource-group** name and tags for it
+0.1.1v		|changes in build date format
+**0.1.0v**	|added **resource-group** module
 
+
+0.2.0v		|added Vnet module
