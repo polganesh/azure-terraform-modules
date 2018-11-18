@@ -111,5 +111,3 @@ Version History | Notes
 0.1.1v		|changes in build date format
 **0.1.0v**	|added **resource-group** module
 
-
-0.2.0v		|added Vnet module
