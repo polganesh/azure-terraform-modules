@@ -5,10 +5,7 @@ Author :- Ganesh Pol
 **/
 
 data "azurerm_resource_group" "resource_group" {
-	filter {
-    		name   = "tag:Name"
-    		values = ["*-${var.location_id}-${var.environment}-${var.cost_centre}-${var.seq_id}"]
-  	}
+	name="rg-${var.location_id}-${var.environment}-${var.cost_centre}-${var.seq_id}"
 }
 
 resource "azurerm_route_table" "main" {
