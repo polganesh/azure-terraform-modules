@@ -48,4 +48,28 @@ variable "seq_id"{
 	default="001"
 }
 
+variable "route_address_prefix_CIDR_list"{
+	description="route_address_prefix_CIDR_list"
+	type="list"
+	default=[]
+}
+
+variable "next_hop_type_list"{
+	description="next_hop_type_list"
+	type="list"
+	default=[]
+}
+
+variable "next_hop_in_ip_address_list"{
+	description="next_hop_in_ip_address_list"
+	type="list"
+	default=[]
+}
+
+
+
+
+
+
+
 
