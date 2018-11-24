@@ -103,8 +103,9 @@ sun		|Sunday
 # Version History #
 Version History | Notes
 ----------------|--------
+**0.4.0v**	|added **advanced-networking** module with custom vnet and subnet
 0.3.1v		|added route to **route-table**
-0.3.0v		|added **route table** module 
+**0.3.0v**	|added **route table** module 
 0.2.2v		|added facility to attach multiple CIDR blocks to virtual network module
 0.2.1v		|removed dependency of project in **virtual-network** and **resource-group** module. these modules are not specific to project from this version onward.
 **0.2.0v**	|added **virtual-network** module
