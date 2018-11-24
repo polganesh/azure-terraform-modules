@@ -16,7 +16,7 @@ resource "azurerm_kubernetes_cluster" "test" {
 
   agent_pool_profile {
 	# Agent pool name can not be more than 12 char Agent Pool names must start with a lowercase letter, have max length of 12, and only have 		# characters a-z0-9.
-    	name            =  "${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
+    	name            =  "${var.environment}${var.cost_centre}${var.app_service}"
     	count           = "${var.agent_count}"
     	vm_size         = "${var.agent_vm_size}"
     	os_type         = "${var.agent_os_type}"
