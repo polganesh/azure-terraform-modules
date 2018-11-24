@@ -66,6 +66,9 @@ variable "next_hop_in_ip_address_list"{
 	default=[]
 }
 
+variable "subnetid"{}
+
+
 
 
 

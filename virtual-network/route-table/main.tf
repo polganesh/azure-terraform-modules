@@ -26,6 +26,11 @@ resource "azurerm_route_table" "main" {
 	}
 }
 
+resource "azurerm_subnet_route_table_association" "test" {
+  subnet_id      = "${var.subnetid}"
+  route_table_id = "${azurerm_route_table.main.id}"
+}
+
 
 resource "azurerm_route" "main" {
 	count			=	"${length(var.route_address_prefix_CIDR_list)}"
