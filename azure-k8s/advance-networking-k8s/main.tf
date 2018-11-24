@@ -15,7 +15,8 @@ resource "azurerm_kubernetes_cluster" "test" {
   dns_prefix          = "${var.dns_prefix}"
 
   agent_pool_profile {
-    	name            =  "k8sagent-${var.location_id}-${var.environment}-${var.cost_centre}-${var.project}-${var.app_service}-${var.seq_id}"
+	# Agent pool name can not be more than 12 char Agent Pool names must start with a lowercase letter, have max length of 12, and only have 		# characters a-z0-9.
+    	name            =  "${var.environment}-${var.cost_centre}-${var.project}-${var.seq_id}"
     	count           = "${var.agent_count}"
     	vm_size         = "${var.agent_vm_size}"
     	os_type         = "${var.agent_os_type}"
