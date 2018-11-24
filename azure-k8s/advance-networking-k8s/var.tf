@@ -83,3 +83,6 @@ variable "service_principal_client_secret"{
 
 variable "agent_subnet_id"{
 }
+
+variable "app_service"{
+}
